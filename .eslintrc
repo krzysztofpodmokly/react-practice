@@ -1,9 +1,23 @@
 {
-  "extends": ["react-app", "airbnb"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "document": true
+  },
   "rules": {
-    "react/jsx-filename-extension": [1, {
-      "extensions": [".js"]
-    }],
-    "jsx-quotes": ["error", "prefer-single"]
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js"
+        ]
+      }
+    ]
   }
 }
