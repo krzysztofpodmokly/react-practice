@@ -1,5 +1,5 @@
 import React from 'react';
-import UserPageTemplate from 'templates/UserPageTemplate';
+import GridTemplate from 'templates/GridTemplate';
 import Card from 'components/molecules/Card/Card';
 
 const twitters = [
@@ -38,18 +38,19 @@ const twitters = [
 ];
 
 const Twitters = () => (
-  <UserPageTemplate pageType="twitter">
-    {twitters.map(twitter => (
+  <GridTemplate pageType="twitters">
+    {twitters.map(({ id, title, content, twitterName, created }) => (
       <Card
-        cardType="twitter"
-        title={twitter.title}
-        content={twitter.content}
-        twitterName={twitter.twitterName}
-        created={twitter.created}
-        key={twitter.title}
+        id={id}
+        cardType="twitters"
+        title={title}
+        content={content}
+        twitterName={twitterName}
+        created={created}
+        key={title}
       />
     ))}
-  </UserPageTemplate>
+  </GridTemplate>
 );
 
 export default Twitters;

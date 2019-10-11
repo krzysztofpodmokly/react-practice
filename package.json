@@ -5,8 +5,10 @@
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "2.1.8",
+    "redux": "^4.0.4",
     "styled-components": "^4.4.0"
   },
   "scripts": {
@@ -29,6 +31,7 @@
     "@storybook/addon-links": "^5.2.3",
     "@storybook/addons": "^5.2.3",
     "@storybook/react": "^5.2.3",
+    "babel-eslint": "^10.0.3",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
