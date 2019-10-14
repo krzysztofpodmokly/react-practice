@@ -2,23 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DetailsTemplate from 'templates/DetailsTemplate';
 import { routes } from 'routes';
+import withContext from 'hoc/withContext';
 
 class DetailsPage extends React.Component {
   state = {
-    pageType: 'notes',
+    pageContext: 'notes',
   };
 
   componentDidMount() {
     const { match } = this.props;
     switch (match.path) {
       case routes.twitter:
-        this.setState({ pageType: 'twitters' });
+        this.setState({ pageContext: 'twitters' });
         break;
       case routes.note:
-        this.setState({ pageType: 'notes' });
+        this.setState({ pageContext: 'notes' });
         break;
       case routes.article:
-        this.setState({ pageType: 'articles' });
+        this.setState({ pageContext: 'articles' });
         break;
       default:
         console.log('Something went wrong with matching paths');
@@ -36,10 +37,10 @@ class DetailsPage extends React.Component {
       created: '1 day',
     };
 
-    const { pageType } = this.state;
+    const { pageContext } = this.state;
     return (
       <DetailsTemplate
-        pageType={pageType}
+        pageContext={pageContext}
         title={dummyArticle.title}
         created={dummyArticle.created}
         content={dummyArticle.content}
@@ -51,7 +52,7 @@ class DetailsPage extends React.Component {
 }
 
 DetailsPage.propTypes = {
-  match: PropTypes.string.isRequired,
+  match: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
-export default DetailsPage;
+export default withContext(DetailsPage);
